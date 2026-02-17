@@ -15,8 +15,11 @@ export function LoomReveal({ children }: LoomRevealProps) {
     <div
       ref={ref}
       style={{
-        clipPath: visible ? "inset(0 0% 0 0)" : "inset(0 100% 0 0)",
-        transition: "clip-path 1.2s cubic-bezier(.22,1,.36,1)",
+        opacity: visible ? 1 : 0.84,
+        transform: visible ? "translateY(0)" : "translateY(10px)",
+        transition:
+          "opacity 1.2s cubic-bezier(.22,1,.36,1), transform 1.2s cubic-bezier(.22,1,.36,1)",
+        willChange: "opacity, transform",
       }}
     >
       {children}

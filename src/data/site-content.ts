@@ -19,6 +19,7 @@ export interface ContactLink {
   value: string;
   href: string;
   primary?: boolean;
+  openInNewTab?: boolean;
 }
 
 export const navItems: Array<{ id: NavSectionId; label: string }> = [
@@ -75,30 +76,35 @@ export const projects: ProjectItem[] = [
 ];
 
 export const experience: ExperienceItem[] = [
-  { year: "2024", role: "Unit Lead", company: "Avito", note: "Trust & Safety · 3 teams" },
+  {
+    year: "2024",
+    role: "Unit Lead",
+    company: "Avito",
+    note: "Moderation Systems in Trust & Safety · 3 teams. End-to-end ownership of the UGC content moderation pipeline, internal tooling for moderation staff, QoC frameworks, and anti-fraud detective workflows.",
+  },
   {
     year: "2022",
     role: "CPO",
     company: "Mitgo",
-    note: "Admitad + Tapfiliate · 5 markets",
+    note: "Admitad + Tapfiliate · 5 markets. ML-driven product features and martech integrations across affiliate marketing platforms serving 3,000+ advertisers and 100k+ publishers.",
   },
   {
     year: "2020",
     role: "CPO",
     company: "Karuna",
-    note: "Fintech · 570k users · 15× growth",
+    note: "Fintech · 570k users · 15× growth. Markets: Indonesia, India, LATAM, MENA. Built and scaled a 12-person product org from scratch.",
   },
   {
     year: "2018",
     role: "Product Director",
     company: "Pilki",
-    note: "65+ locations · CRM rollout",
+    note: "65+ locations · Launched online sales for Pilki school.",
   },
   {
     year: "2016",
     role: "PM → Director",
     company: "Babadu",
-    note: "Top-100 e-com · 6× mobile sales",
+    note: "Top-100 e-com in RU · 6× mobile sales through new mobile app and overall funnel optimization.",
   },
 ];
 
@@ -116,15 +122,16 @@ export const contactLinks: ContactLink[] = [
   },
   {
     label: "Telegram",
-    value: "@sabitsky",
-    href: "https://t.me/sabitsky",
+    value: "@c_sabitsky",
+    href: "https://t.me/c_sabitsky",
+    openInNewTab: true,
   },
 ];
 
 export const siteMeta = {
   logo: "c.sabitsky",
   owner: "Constantine Sabitsky",
-  location: "Belgrade, Serbia · GMT+1",
+  location: "Belgrade, Serbia",
   copyright: "© 2026 Constantine Sabitsky",
-  builtWith: "craft + claude + terracotta",
+  builtWith: "Crafted with Claude",
 };

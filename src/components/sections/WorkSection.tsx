@@ -14,13 +14,13 @@ export function WorkSection() {
         <FadeUp delay={0.05}>
           <div className={styles.trackSectionIntro}>
             <h2 className={styles.trackTitle}>
-              From soldering irons
-              <br />
-              to product orgs
+              From hands-on building to leading world-class products
             </h2>
             <p className={styles.trackDescription}>
-              From early-stage fintech to top-3 classifieds. AI features, IoT systems, and full
-              product orgs — always with measurable outcomes.
+              Early-stage startups, one of the world&apos;s largest marketplaces, and everything in
+              between. AI features, IoT systems, and full product orgs — always with measurable
+              outcomes. B2B, B2C, SaaS, and beyond. Teams of up to 12 direct reports with hundreds
+              of people collectively under them.
             </p>
           </div>
         </FadeUp>
