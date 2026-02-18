@@ -4,7 +4,7 @@ export interface ProjectItem {
   name: string;
   desc: string;
   tags: string[];
-  hasLink: boolean;
+  href?: string;
 }
 
 export interface ExperienceItem {
@@ -41,37 +41,33 @@ export const projects: ProjectItem[] = [
     name: "Hearitage",
     desc: "AI-powered museum guide with conversational storytelling",
     tags: ["AI", "Mobile Web", "Vibe-coded"],
-    hasLink: true,
+    href: "https://www.hearitage.com/",
   },
   {
     name: "Finalists",
     desc: "Recruitment platform prototype for household staff",
     tags: ["SaaS", "Prototype", "Vibe-coded"],
-    hasLink: true,
+    href: "https://finalists-app.vercel.app/",
   },
   {
     name: "Smart Home",
     desc: "Home Assistant + ESP32 – climate, air quality, automation",
     tags: ["IoT", "Hardware", "Home Assistant"],
-    hasLink: true,
   },
   {
     name: "Cat Dresser",
     desc: "Solid pine cabinet with cat entrance. Built by hand",
     tags: ["Industrial Design", "Woodworking"],
-    hasLink: true,
   },
   {
     name: "AI Game",
     desc: "Godot-based game that teaches AI thinking patterns",
     tags: ["Game Dev", "AI", "In Progress"],
-    hasLink: false,
   },
   {
     name: "Smart Greenhouse",
     desc: "Automated growing with ESP32, irrigation & climate",
     tags: ["IoT", "Agriculture", "Coming Soon"],
-    hasLink: false,
   },
 ];
 

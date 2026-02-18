@@ -61,31 +61,46 @@ export function WorkSection() {
         <div className={styles.projectsGrid}>
           {projects.map((project, index) => {
             const isWip = project.tags.some((tag) => tag === "In Progress" || tag === "Coming Soon");
+            const hasLink = Boolean(project.href);
+            const cardClassName = `${styles.projectCard} ${hasLink ? styles.hasLink : ""} ${
+              isWip ? styles.wipCard : ""
+            }`;
+            const cardContent = (
+              <>
+                {hasLink ? <span className={styles.arrow}>↗</span> : null}
+                <span className={styles.projectIndex}>{String(index + 1).padStart(2, "0")}</span>
+                <h3 className={styles.projectTitle}>{project.name}</h3>
+                <p className={styles.projectDesc}>{project.desc}</p>
+                <div className={styles.tags}>
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`${styles.tag} ${
+                        tag === "In Progress" || tag === "Coming Soon" ? styles.tagWip : ""
+                      }`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </>
+            );
 
             return (
               <FadeUp key={project.name} delay={0.25 + index * 0.05}>
-                <div
-                  className={`${styles.projectCard} ${project.hasLink ? styles.hasLink : ""} ${
-                    isWip ? styles.wipCard : ""
-                  }`}
-                >
-                  {project.hasLink ? <span className={styles.arrow}>↗</span> : null}
-                  <span className={styles.projectIndex}>{String(index + 1).padStart(2, "0")}</span>
-                  <h3 className={styles.projectTitle}>{project.name}</h3>
-                  <p className={styles.projectDesc}>{project.desc}</p>
-                  <div className={styles.tags}>
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className={`${styles.tag} ${
-                          tag === "In Progress" || tag === "Coming Soon" ? styles.tagWip : ""
-                        }`}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {project.href ? (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.projectLink}
+                    aria-label={`Open ${project.name}`}
+                  >
+                    <article className={cardClassName}>{cardContent}</article>
+                  </a>
+                ) : (
+                  <article className={cardClassName}>{cardContent}</article>
+                )}
               </FadeUp>
             );
           })}
